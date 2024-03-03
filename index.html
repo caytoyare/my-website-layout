@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>responsive navbar</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            min-height: 100vh;
+            background-image: url(sawir.webp);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            font-family: Arial, Helvetica, sans-serif;
+            
+        }
+        nav{
+                background-color: white;
+                box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+            }
+            nav ul{
+                width: 100%;
+                list-style: none;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+            }
+            nav li{
+                height: 50px;
+            }
+            nav a{
+                height: 100%;
+                padding: 0 30px;
+                text-decoration: none;
+                align-items: center;
+                color: black;
+            }
+            nav a:hover{
+                background-color: #f0f0f0;
+            }
+            nav li:first-child{
+                margin-right: auto;
+            }
+            .sidebar{
+                position: fixed;
+                top: 0;
+                right: 0;
+                height: 100vh;
+                width: 250px;
+                z-index: 999;
+                background-color: rgba(255, 255, 255, 0.192);
+                backdrop-filter: blur(10px);
+                box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1) ;
+                display: none;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+
+            }
+            .sidebar li{
+                width: 80%;
+            }
+            .sidebar a{
+                width: 100%;
+            }
+            .menu-button{
+                display: none;
+            }
+            @media(max-width: 800px){
+                .hideOmobile{
+                    display: none;
+                }
+                .menu-button{
+                display: block;
+            }
+            }
+           
+            @media(max-width: 400px){
+                .sidebar{
+                    width: 100%;
+                }
+            }
+            .leftcolumn{
+                float: left;
+                width: 75%;
+            }
+            .rightcolumn{
+                float: ;
+                width:;
+                background:burlywood;
+                padding-left: 20px;
+            }
+            .fakeimg{
+                background-color: #aaa;
+                width: 100px;
+                padding: 20px;
+            }
+            .card{
+            background-color: white;
+            padding: 20px;
+            margin-top: 20px;
+            }
+            .row::after{
+            content: '';
+            display: table;
+            clear: both;
+            }
+            .footer{
+            padding: 20px;
+            text-align: center;
+            background:burlywood;
+            margin-top: 20px;
+            }
+        </style>
+</head>
+<body>
+    <nav>
+        <ul class="sidebar">
+            <li onclick=hidesidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Product</a></li>
+            <li><a href="#">Forem</a></li>
+            <li><a href="#">Login</a></li>
+        </ul>
+        <ul>
+            <li ><a href="#">coding2go</a></li>
+            <li class="hideOmobile"><a href="#">About</a></li>
+            <li class="hideOmobile"><a href="#">Blog</a></li>
+            <li class="hideOmobile"><a href="#">Product</a></li>
+            <li class="hideOmobile"><a href="#">Forem</a></li>
+            <li class="hideOmobile"><a href="#">Login</a></li>
+            <li class="menu button" onclick=showsidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+        </ul>
+    </nav>
+    <script>
+        function showsidebar(){
+            const sidebar=document.querySelector('.sidebar')
+            sidebar.style.display='flex'
+        }
+        function hidesidebar(){
+            const sidebar=document.querySelector('.sidebar')
+            sidebar.style.display='none'
+        }
+        
+            
+    
+    </script>
+    <div class="row">
+        <div class="leftcolumn">
+            <div class="card">
+                <h1>title heading</h1>
+                <h5>Lorem ipsum dolor sit amet.</h5>
+             <div class="fakeimg" style="height: 200px;">image</div>
+             <p>some text</p>
+             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores sint quo cupiditate?</p>
+            </div>
+            <div class="card">
+                <h2>title heading 2</h2>
+                <h5>title description</h5>
+                <div class="fakeimg" style="height: 200px;">image</div>
+                <p>some text</p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+            </div>
+        </div>
+        <div class="rightcolumn">
+            <div class="card">
+                <h1>about me</h1>
+                <div class="fakeimg" style="height: 200px;">image</div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="card">
+                <h3>popular post</h3>
+                <div class="fakeimg"><p>image</p></div>
+                <div class="fakeimg"><p>image</p></div>
+                <div class="fakeimg"><p>image</p></div>
+            </div>
+            <div class="card">
+                <h3>follow me</h3>
+                <p>some text</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <h2>footer</h2>
+    </div>
+</body>
+</html>
